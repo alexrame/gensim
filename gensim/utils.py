@@ -1129,6 +1129,7 @@ RULE_KEEP = 2
 
 
 def keep_vocab_item(word, count, min_count, trim_rule=None):
+    min_count=1 if ('%%' in word and ':' in word) else min_count
     default_res = count >= min_count
 
     if trim_rule is None:
